@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TopteamsService } from '../services/topteams.service';
+import { ActivatedRoute, Params } from '@angular/router';
 
 @Component({
   selector: 'NFLtopteams',
@@ -8,14 +9,21 @@ import { TopteamsService } from '../services/topteams.service';
 })
 export class TopteamsComponent implements OnInit {
   topTeams;
-  constructor(private teamService: TopteamsService) { }
+  category;
+  constructor(private teamService: TopteamsService, private route: ActivatedRoute) { }
 
   ngOnInit() {
-    this.teamService.getTopTeams().subscribe(res=>
-    {
-      this.topTeams = res;
-      console.log(this.topTeams)
+    this.route.params.subscribe((params: Params)=>{
+      this.category=params['category']
+      if(this.category){
+        this.teamService.getTopTeams(this.category).subscribe(res=>
+          {
+            this.topTeams = res;
+            console.log(this.topTeams)
+          })
+      }
     })
+   
   }
 
 }

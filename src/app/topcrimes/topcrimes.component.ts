@@ -13,7 +13,7 @@ export class TopcrimesComponent implements OnInit {
   ngOnInit() {
     this.crimeService.getTopCrimes().subscribe(res=> {
       this.topCrimes = res;
-      console.log(this.topCrimes);
+      
     })
   }
 

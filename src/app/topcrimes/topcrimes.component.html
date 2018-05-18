@@ -10,6 +10,7 @@
         <td>{{ crime.Category}}</td>
         <td>{{ crime.arrest_count }}</td>
         <td><a [routerLink]="['/', crime.Category,'topplayers']">Top Players for {{crime.Category}}</a></td>
+        <td><a [routerLink]="['/', crime.Category,'topteams']">Top Teams for {{ crime.Category}}</a></td>
       </tr>
 </tbody>
   

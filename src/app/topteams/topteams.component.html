@@ -1,3 +1,17 @@
-<p>
-  topteams works!
-</p>
+<table class="table table-stripped">
+  <thead>
+    <tr>
+      <th>Team Name</th>
+      <th>Team City</th>
+      <th>Team Arrest Count</th>
+    </tr>
+  </thead>
+    <tbody>
+      <tr *ngFor="let team of   topTeams">
+        <td>{{team.Team_name}}</td>
+        <td>{{team.Team_city}}</td>
+        <td>{{team.arrest_count}}</td>
+      </tr>
+    </tbody>
+ 
+</table>

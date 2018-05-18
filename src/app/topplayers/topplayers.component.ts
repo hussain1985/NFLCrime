@@ -21,7 +21,7 @@ export class TopplayersComponent implements OnInit {
       this.category = params['category'];
 
       if(this.category){
-         console.log(this.category);
+         
          this.playerService.getTopPlayer(this.category).subscribe(res=> 
            { 
              this.topPlayers = res;

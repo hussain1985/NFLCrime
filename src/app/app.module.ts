@@ -23,7 +23,8 @@ import {RouterModule} from '@angular/router';
     HttpClientModule,
     RouterModule.forRoot([
       {path: '', component: TopcrimesComponent},
-      {path:':category/topplayers', component: TopplayersComponent}
+      {path:':category/topplayers', component: TopplayersComponent},
+      {path: ':category/topteams', component: TopteamsComponent}
     ])
   ],
   providers: [],

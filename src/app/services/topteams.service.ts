@@ -8,7 +8,7 @@ export class TopteamsService {
 
   constructor(private http: HttpClient) { }
 
-  getTopTeams(){
-   return this.http.get("http://nflarrest.com/api/v1/crime/topTeams/DUI");
+  getTopTeams(category: string){
+   return this.http.get("http://nflarrest.com/api/v1/crime/topTeams/"+category);
   }
 }
