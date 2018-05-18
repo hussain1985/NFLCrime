@@ -1,0 +1,16 @@
+<table class="table table-stripped">
+  <thead>
+    <tr>
+      <th>Category</th>
+    <th>Arrest Count</th>
+  </tr>
+</thead>
+<tbody>
+    <tr *ngFor="let crime of topCrimes">
+        <td>{{ crime.Category}}</td>
+        <td>{{ crime.arrest_count }}</td>
+        <td><a [routerLink]="['/', crime.Category,'topplayers']">Top Players for {{crime.Category}}</a></td>
+      </tr>
+</tbody>
+  
+</table>
