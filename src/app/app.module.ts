@@ -8,6 +8,8 @@ import { TopplayersComponent } from './topplayers/topplayers.component';
 import { TopteamsComponent } from './topteams/topteams.component';
 import { TopcrimesComponent } from './topcrimes/topcrimes.component';
 import {RouterModule} from '@angular/router';
+import { FilterNFLPipe } from './filters/filter-nfl.pipe';
+import { CrimeTimelineComponent } from './crime-timeline/crime-timeline.component';
 
 
 @NgModule({
@@ -16,7 +18,9 @@ import {RouterModule} from '@angular/router';
     NavbarComponent,
     TopplayersComponent,
     TopteamsComponent,
-    TopcrimesComponent
+    TopcrimesComponent,
+    FilterNFLPipe,
+    CrimeTimelineComponent
   ],
   imports: [
     BrowserModule,

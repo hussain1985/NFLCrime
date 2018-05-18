@@ -19,7 +19,6 @@ export class TopteamsComponent implements OnInit {
         this.teamService.getTopTeams(this.category).subscribe(res=>
           {
             this.topTeams = res;
-            console.log(this.topTeams)
           })
       }
     })
