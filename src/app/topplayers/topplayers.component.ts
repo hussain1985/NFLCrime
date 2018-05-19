@@ -9,11 +9,12 @@ import { ActivatedRoute, Params } from '@angular/router';
 })
 export class TopplayersComponent implements OnInit {
 
- 
+
   category;
   topPlayers;
+  searchQuery;
   constructor(private playerService: TopplayersService, private route: ActivatedRoute) {
-    
+
   }
 
   ngOnInit() {
@@ -21,17 +22,19 @@ export class TopplayersComponent implements OnInit {
       this.category = params['category'];
 
       if(this.category){
-         
-         this.playerService.getTopPlayer(this.category).subscribe(res=> 
-           { 
+
+         this.playerService.getTopPlayer(this.category).subscribe(res=>
+           {
              this.topPlayers = res;
            }
-          
+
          );
        }
-     
-    })
-  
-  }
 
+    })
+
+  }
+  NflSearch(SearchQuery){
+    this.searchQuery = SearchQuery;
+  }
 }

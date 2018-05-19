@@ -1,19 +1,27 @@
+<nfl-search-bar (searchQuery)="NflSearch($event)"></nfl-search-bar>
+
+
 <table class="table table-stripped">
   <thead>
     <tr>
       <th>Category</th>
-    <th>Arrest Count</th>
+      <th>
+      Arrest Count
+      <i class="fa" [ngClass]="{
+        'fa-sort-numeric-asc' : isAscending,
+        'fa-sort-numeric-desc': !isAscending}"  (click)="AlphaSort()"></i>
+    </th>
     <th>Top Players</th>
     <th>Top Teams</th>
   </tr>
 </thead>
 <tbody>
-    <tr *ngFor="let crime of topCrimes">
+    <tr *ngFor="let crime of filteredcrimes | filterNFLCrimeCategory:searchTerm">
         <td>{{ crime.Category}}</td>
         <td>{{ crime.arrest_count }}</td>
         <td><a [routerLink]="['/', crime.Category,'topplayers']">Top Players for {{crime.Category}}</a></td>
         <td><a [routerLink]="['/', crime.Category,'topteams']">Top Teams for {{ crime.Category}}</a></td>
       </tr>
 </tbody>
-  
+
 </table>

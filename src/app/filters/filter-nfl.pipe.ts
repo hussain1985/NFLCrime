@@ -1,31 +1,19 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { TopcrimesService } from '../services/topcrimes.service';
-import { filter } from 'rxjs/operators'
-
 @Pipe({
-  name: 'filterNFL'
+  name: 'filterNFLCrimeCategory'
 })
 export class FilterNFLPipe implements PipeTransform {
-  
-  constructor(){
-    
-  }
-  transform(value, args?: any): any {
- 
 
-  if(value !== undefined){
-    return value.sort((a: any, b: any) => {
+  constructor() {
 
-      if (a > b) {
-        return -1;
-      } else if (a < b) {
-        return 1;
-      } else {
-        return 0;
-      }
-    });
-  }
-  
   }
 
+  transform(crimes: any, term: any): any {
+
+    if(crimes === undefined || term === undefined)
+    return crimes
+    else
+    return crimes.filter(crime => crime.Category.toLowerCase().includes(term.toLowerCase()));
+
+  }
 }

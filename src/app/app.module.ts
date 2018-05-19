@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NavbarComponent } from './navbar/navbar.component';
@@ -10,6 +9,8 @@ import { TopcrimesComponent } from './topcrimes/topcrimes.component';
 import {RouterModule} from '@angular/router';
 import { FilterNFLPipe } from './filters/filter-nfl.pipe';
 import { CrimeTimelineComponent } from './crime-timeline/crime-timeline.component';
+import { NflSearchBarComponent } from './nfl-search-bar/nfl-search-bar.component';
+import { FilterplayersPipe } from './filters/filterplayers.pipe';
 
 
 @NgModule({
@@ -20,11 +21,15 @@ import { CrimeTimelineComponent } from './crime-timeline/crime-timeline.componen
     TopteamsComponent,
     TopcrimesComponent,
     FilterNFLPipe,
-    CrimeTimelineComponent
+    CrimeTimelineComponent,
+    NflSearchBarComponent,
+    FilterplayersPipe
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
+
+
     RouterModule.forRoot([
       {path: '', component: TopcrimesComponent},
       {path:':category/topplayers', component: TopplayersComponent},
